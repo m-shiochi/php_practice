@@ -9,7 +9,6 @@ echo "\n";
 
 //2 $a と $b を仮引数に持ち、　$a と $b　を足した結果を返す関数を作成してください
 echo "2の答え　";
-$result2 = 0;
 function add($a, $b) {
     return $a + $b;
 }
@@ -21,29 +20,31 @@ echo "3の答え　";
 function f($arr) {
     $c1 = 1;
     foreach($arr as $c) {
-        $c = $c * $c1;
-        $c1 = $c;
+        // $c = $c * $c1;
+        // $c1 = $c;
+        $c1 = $c1 * $c;
     }
     return $c1;
     echo "\n";
 }
-echo f($array = [1,3,5,7,9]);
+echo f([1,3,5,7,9]);
 echo "\n";
 
 //4 4.【応用】　下記のプログラムは、配列の中で1番大きい値を返す max_array という関数を実装しようとしています。途中の部分を完成させてください
 echo "4の答え　";
+$array = [1,9,5,7,3];
 function max_array($arr){
   // とりあえず配列の最初の要素を一番大きい値とする
   $max_number = $arr[0];
   foreach($arr as $a){
     // ここで配列の中の1番大きい値を探したい
-    if ($a >= $max_number) {
+    if ($a > $max_number) {
         $max_number = $a;
     }
   }
   return $max_number;
 }
-echo max_array($array = [1,9,5,7,3]);
+echo max_array($array);
 echo "\n";
 echo "配列は次の通りです";
 echo "\n";
